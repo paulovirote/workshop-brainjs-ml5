@@ -22,4 +22,4 @@ const outputs = [
   net.run([1, 1])
 ]
 
-outputs.map(output => console.log(output));
+outputs.map((output, index) => console.log(`Output ${index + 1}`, output));
