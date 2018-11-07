@@ -10,13 +10,14 @@ navigator.mediaDevices.getUserMedia({ video: true })
 
 // Initialize the Image Classifier method with MobileNet passing the video as the
 // second argument and the getClassification function as the third
-ml5.imageClassifier(/* TODO */)
-  .then(/* TODO */)
+ml5.imageClassifier('MobileNet', video)
+  .then(classifier => loop(classifier))
 
 const loop = (classifier) => {
   classifier.predict()
     .then(results => {
-      // 1. Print results
-      // 2. Loop again
+      result.innerText = results[0].className;
+      probability.innerText = results[0].probability.toFixed(4);
+      loop(classifier) // Call again to create a loop
     })
 }

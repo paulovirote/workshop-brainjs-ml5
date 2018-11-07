@@ -1,7 +1,7 @@
 const brain = require('brain.js');
 
 const config = {
-  hiddenLayers: [10]
+  hiddenLayers: [10, 10]
 };
 
 const LSTM = brain.recurrent.LSTM;
@@ -16,7 +16,6 @@ const outputs = [
   net.run('I feel great about the world'), // 'happy'
   net.run('I feel great'),                 // 'happy'
   net.run('great'),                        // 'happy'
-  net.run('I wanna die.'),                 // 'sad'
   net.run('This is terrible')              // 'sad'
 ]
 

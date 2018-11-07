@@ -8,31 +8,27 @@
 
   <body>
     <h1>Image classification using MobileNet</h1>
-    <p>The MobileNet model labeled this as
-    <span id="result">...</span> with a confidence of
-    <span id="probability">...</span></p>
-    <img src="https://http2.mlstatic.com/ferrari-458-italia-D_NQ_NP_836344-MLB26293882641_112017-F.jpg"
-     crossorigin="anonymous" id="image" width="400">
+    <p>
+      The MobileNet model labeled this as
+      <span id="result">...</span> with a confidence of
+      <span id="probability">...</span>
+    </p>
+    <img src="https://http2.mlstatic.com/ferrari-458-italia-D_NQ_NP_836344-MLB26293882641_112017-F.jpg" id="image" width="400">
 
     <script>
       // The image we want to classify
-      const image = document.getElementById('image');
+      
       // The result tag in the HTML
-      const result = document.getElementById('result');
+      
       // The probability tag in the HTML
-      const probability = document.getElementById('probability');
-
+      
+      
       // Initialize the Image Classifier method with MobileNet
-      const classifier = ml5.imageClassifier('MobileNet', function() {
-        console.log('Model Loaded!');
-      });
+      const classifier = ml5.imageClassifier(/*TODO*/);
 
       // Make a prediction with the selected image
       // This will return an array with a default of 10 options with their probabilities
-      classifier.predict(image, function(err, results) {
-        result.innerText = results[0].className;
-        probability.innerText = results[0].probability.toFixed(4);
-      });
+      classifier.predict(/*TODO*/);
 
     </script>
   </body>
